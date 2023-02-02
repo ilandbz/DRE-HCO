@@ -6,8 +6,8 @@
 <section id="about" class="about">
 
 @php
-    $image_path2 = public_path('img/noticias/').$noticia->img2;
-    $image_path3 = public_path('img/noticias/').$noticia->img3;
+    $image_path2 = public_path('../../public_html/img/noticias/').$noticia->img2;
+    $image_path3 = public_path('../../public_html/img/noticias/').$noticia->img3;
 @endphp
     <div class="container">
         <h2>{{$noticia->titulo}}</h2>

@@ -11,7 +11,7 @@ class MenuController extends Controller
 {
     public function index(){
         // $data['menus']=Menu::paginate(10);
-        // return view('intranet/menu', $data); 
+        // return view('intranet/menu', $data);
     }
     public function create(){
         $data['menus']=Menu::select('menus.*', 'm2.nom_menu as categoria')->leftJoin('menus as m2', 'menus.categoriamenu', '=', 'm2.id')->paginate(10);
@@ -27,7 +27,7 @@ class MenuController extends Controller
             $pagina->id=$idpagina;
             $pagina->nom_pagina=$request->nom_pagina;
             $pagina->cont_pagina=$request->cont_pagina;
-            $pagina->save();           
+            $pagina->save();
         }
         $menu->nom_menu = $request->nom_menu;
         $menu->link_menu = $request->link_menu;
@@ -47,7 +47,7 @@ class MenuController extends Controller
         $data['menus']=$menus;
         $data['submenus']=$submenus;
         $data['paginaweb']=$pagina;
-        return view('paginas/paginaweb', $data); 
+        return view('paginas/paginaweb', $data);
     }
     public function destroy(Menu $menu){
         $menu->delete();
@@ -59,15 +59,15 @@ class MenuController extends Controller
 
         $menu->activo_menu = $request->activo_menu;
         if($request->categoriamenu==''){
-            $menu->categoriamenu = null; 
+            $menu->categoriamenu = null;
         }else{
-            $menu->categoriamenu = $request->categoriamenu; 
-        }   
+            $menu->categoriamenu = $request->categoriamenu;
+        }
         if($menu->link_menu=='#'){//si no tubo paginas web
             if($request->link_menu!='#' && $request->link_menu==''){//existe registro de pagina web nueva pagina web crear nueva pagina
                 $idpagina = 1+Pagina::select('id')->max('id');
                 if($request->link_menu!='#'){
-                    $request->link_menu='http://127.0.0.1:8000/menus/paginaweb/'.$idpagina;
+                    $request->link_menu='https://drehuanuco.gob.pe/menus/paginaweb/'.$idpagina;
                 }
                 $pagina->id=$idpagina;
                 $pagina->nom_pagina=$request->nom_pagina;
@@ -93,10 +93,10 @@ class MenuController extends Controller
     public function edit(Menu $menu){
         $data['menusdd']=Menu::where('link_menu', '#')->get();
         $data['menu']=$menu;
-        if($menu->link_menu!='#'){
+        if($menu->idpagina>1){
             $data['pagina'] = Pagina::find($menu->idpagina);
         }
-        return view('intranet/menu/menu', $data); 
+        return view('intranet/menu/menu', $data);
     }
     public function submenus(Menu $menu){
         $data['menu']=$menu;
@@ -119,9 +119,9 @@ class MenuController extends Controller
         return redirect()->route('menu.submenus', $idmenus);
     }
     // public function paginaweb($idpagina=null){
-        
+
     //     $data['menus']=Menu::paginate(10);
-    //     return view('intranet/pagina', $data); 
+    //     return view('intranet/pagina', $data);
     // }
     public function paginawebstore(Request $request){
         $pagina = new Pagina();

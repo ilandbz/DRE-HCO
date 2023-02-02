@@ -29,7 +29,9 @@ class HomeController extends Controller
         $data['submenus']=Menu::whereNotNull('categoriamenu')->get();
         $popup=Popup::where('estado', 1)->orderBy('created_at', 'desc')->first();
         $data['popup']=$popup;
-        $data['imagenes']=ImagenPopup::where('idpopup', $popup->id)->get();
+        if(isset($popup)){
+            $data['imagenes']=ImagenPopup::where('idpopup', $popup->id)->get();
+        }
         $data['sliders']=Slider::where('activo_slider', 1)->get();
         return view('home', $data);
     }

@@ -43,17 +43,17 @@ class NoticiaController extends Controller
     }
     public function destroy(Noticia $noticia){
         if($noticia->img1!=null){
-            $image_path = public_path('img/noticias/').$noticia->img1;
+            $image_path = public_path('./../public_html/img/noticias/').$noticia->img1;
             if (file_exists($image_path)){
                 unlink($image_path);
             }
             if($noticia->img2!=null){
-                $image_path = public_path('img/noticias/').$noticia->img2;
+                $image_path = public_path('./../public_html/img/noticias/').$noticia->img2;
                 if (file_exists($image_path)){
                     unlink($image_path);
                 }
                 if($noticia->img3!=null){
-                    $image_path = public_path('img/noticias/').$noticia->img3;
+                    $image_path = public_path('./../public_html/img/noticias/').$noticia->img3;
                     if (file_exists($image_path)){
                         unlink($image_path);
                     }
@@ -73,33 +73,33 @@ class NoticiaController extends Controller
         $noticia->contenido=$request->contenido;
         if($request->hasFile('img1')){
             $file = $request->file('img1');
-            $image_path = public_path('img/noticias/').$noticia->img1;
+            $image_path = public_path('../../public_html/img/noticias/').$noticia->img1;
             $filename = time().'.'.$file->extension();
-            $noticia->img1=$filename;
             if ($noticia->img1!=null && file_exists($image_path)){
                 unlink($image_path);
             }
-            $file->move(public_path('img/noticias'), $filename);
+            $noticia->img1=$filename;
+            $file->move(public_path('../../public_html/img/noticias/'), $filename);
         }
         if($request->hasFile('img2')){
             $file = $request->file('img2');
-            $image_path = public_path('img/noticias/').$noticia->img2;
+            $image_path = public_path('../../public_html/img/noticias/').$noticia->img2;
             $filename = time().'2.'.$file->extension();
-            $noticia->img2=$filename;
             if ($noticia->img2!=null && file_exists($image_path)){
                 unlink($image_path);
             }
-            $file->move(public_path('img/noticias'), $filename);
+            $noticia->img2=$filename;
+            $file->move(public_path('../../public_html/img/noticias/'), $filename);
         }
         if($request->hasFile('img3')){
             $file = $request->file('img3');
-            $image_path = public_path('img/noticias/').$noticia->img3;
+            $image_path = public_path('../../public_html/img/noticias/').$noticia->img3;
             $filename = time().'3.'.$file->extension();
-            $noticia->img3=$filename;
             if ($noticia->img3!=null && file_exists($image_path)){
                 unlink($image_path);
             }
-            $file->move(public_path('img/noticias'), $filename);
+            $noticia->img3=$filename;
+            $file->move(public_path('../../public_html/img/noticias/'), $filename);
         }
         $noticia->save();
         return redirect()->route('noticias.edit', $noticia);

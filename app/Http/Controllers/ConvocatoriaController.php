@@ -45,11 +45,11 @@ class ConvocatoriaController extends Controller
     public function show(Convocatoria $convocatoria){
         $data['convocatoria']=$convocatoria;
         $data['archivos_convocatoria']=ArchivoConvocatoria::where('id_convocatoria', $convocatoria->id)->get();
-        return view('intranet/convocatorias/show', $data); 
+        return view('intranet/convocatorias/show', $data);
     }
     public function archivo_convocatoriacreate(Convocatoria $convocatoria){
         $data['convocatoria']=$convocatoria;
-        return view('intranet/convocatorias/archivoconvocatoria', $data); 
+        return view('intranet/convocatorias/archivoconvocatoria', $data);
     }
     public function archivoconvocatoriadestroy(ArchivoConvocatoria $archivoconvocatoria){
         $idconvocatoria =$archivoconvocatoria->id_convocatoria;
@@ -59,11 +59,14 @@ class ConvocatoriaController extends Controller
     public function archivocstore(Convocatoria $convocatoria, Request $request){
         $archivoconvocatoria = new ArchivoConvocatoria();
         $archivoconvocatoria->nom_archivo = $request->nom_archivo;
-        $archivoconvocatoria->url_archivo = $request->url_archivo;    
+        $archivoconvocatoria->url_archivo = $request->url_archivo;
         $archivoconvocatoria->etapa = $request->etapa;
         $archivoconvocatoria->id_convocatoria = $convocatoria->id;
         $archivoconvocatoria->save();
-        return redirect()->route('convocatoria.show', $convocatoria->id);   
-    
+        return redirect()->route('convocatoria.show', $convocatoria->id);
+
+    }
+    public function archivoedit(){
+
     }
 }
