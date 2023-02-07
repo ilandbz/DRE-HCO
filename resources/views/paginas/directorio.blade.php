@@ -8,7 +8,7 @@
     	<div class="row align-items-center">
         	<div class="col-sm-6">
             	<div class="page-title">
-            		<h1>GALERIA</h1>
+            		<h1>DIRECTORIO</h1>
                 </div>
             </div>
             <div class="col-sm-6">
@@ -28,7 +28,6 @@
 	<div class="container">
         <div class="row">
             <div class="col-md-12">
-                <h2>GALERIA DE IMAGENES</h2>
                 <div class="row">
                   <div class="col">
                       <div class="card mb-3 text-dark bg-light" style="max-width: 540px;">

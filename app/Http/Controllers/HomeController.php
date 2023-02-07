@@ -47,13 +47,13 @@ class HomeController extends Controller
     public function directorio(){
         $menus=Menu::where('activo_menu', 1)->whereNull('categoriamenu')->get();
         $submenus= Menu::whereNotNull('categoriamenu')->get();
-        $data['director']=Directorio::where('cargo', 'DIRECTOR')->first();
-        $data['jefeagi']=Directorio::where('cargo', 'JEFE DE AGI')->first();
-        $data['jefeagp']=Directorio::where('cargo', 'Jefe de AGP')->first();
-        $data['jefeaga']=Directorio::where('cargo', 'JEFE DE AGA')->first();
+        $data['director']=Directorio::where('cargo', 'DIRECTOR REGIONAL DE EDUCACION')->first();
+        $data['jefeagi']=Directorio::where('cargo', 'DIRECTOR DE GESTION INSTITUCIONAL')->first();
+        $data['jefeagp']=Directorio::where('cargo', 'DIRECTORA DE GESTION PEDAGÓGICA')->first();
+        $data['jefeaga']=Directorio::where('cargo', 'DIRECTOR DE GESTION ADMINISTRATIVA')->first();
         $data['menus']=$menus;
         $data['submenus']=$submenus;
-        $data['registros']=Directorio::whereNotIn('cargo' , ['DIRECTOR', 'JEFE DE AGI', 'Jefe de AGP', 'JEFE DE AGA'])->get();
+        $data['registros']=Directorio::whereNotIn('cargo' , ['DIRECTOR REGIONAL DE EDUCACION', 'DIRECTOR DE GESTION INSTITUCIONAL', 'DIRECTORA DE GESTION PEDAGÓGICA', 'DIRECTOR DE GESTION ADMINISTRATIVA'])->get();
         return view('paginas/directorio', $data);
     }
     public function nosotros(){
