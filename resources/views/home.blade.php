@@ -54,7 +54,7 @@
                 <div class="col-md-8 py-1">
                     <section class="p-1 p-2">
                         <div class="row">
-                            <div class="col">
+                            <div class="col-lg-2 col-md-2 col-6">
                                 <div class="single_categories">
                                     <a href="{{route('directorioweb')}}" class="bg_danger small p-1">
                                         <i class="fa fa-desktop"></i>
@@ -62,7 +62,7 @@
                                     </a>
                                 </div>
                             </div>
-                            <div class="col">
+                            <div class="col-lg-2 col-md-2 col-6">
                                 <div class="single_categories">
                                     <a href="#" class="bg_light_green small p-1">
                                         <i class="fa fa-chart-line"></i>
@@ -70,7 +70,7 @@
                                     </a>
                                 </div>
                             </div>
-                            <div class="col">
+                            <div class="col-lg-2 col-md-2 col-6">
                                 <div class="single_categories">
                                     <a href="{{route('documentosdegestionweb')}}" class="bg_default small p-1">
                                         <i class="fa fa-book"></i>
@@ -78,7 +78,7 @@
                                     </a>
                                 </div>
                             </div>
-                            <div class="col">
+                            <div class="col-lg-2 col-md-2 col-6">
                                 <div class="single_categories">
                                     <a href="{{route('galerias')}}" class="bg_pink small p-1">
                                         <i class="fa fa-camera"></i>
@@ -86,7 +86,7 @@
                                     </a>
                                 </div>
                             </div>
-                            <div class="col">
+                            <div class="col-lg-2 col-md-2 col-6">
                                 <div class="single_categories">
                                     <a href="#" class="bg_blue small p-1">
                                         <i class="fa fa-heartbeat"></i>
@@ -94,7 +94,7 @@
                                     </a>
                                 </div>
                             </div>
-                            <div class="col">
+                            <div class="col-lg-2 col-md-2 col-6">
                                 <div class="single_categories">
                                     <a href="#" class="bg_orange small p-1">
                                         <i class="fa fa-code"></i>
@@ -104,7 +104,7 @@
                             </div>
                         </div>
                         <div class="row mt-4">
-                            <div class="col">
+                            <div class="col-lg-2 col-md-2 col-6">
                                 <div class="single_categories">
                                     <a href="#" class="bg_danger small p-3">
                                         <i class="fa fa-globe"></i>
@@ -112,7 +112,7 @@
                                     </a>
                                 </div>
                             </div>
-                            <div class="col">
+                            <div class="col-lg-2 col-md-2 col-6">
                                 <div class="single_categories">
                                     <a href="{{route('infraestructuraall')}}" class="bg_light_green small p-3">
                                         <i class="fa fa-chart-line"></i>
@@ -120,7 +120,7 @@
                                     </a>
                                 </div>
                             </div>
-                            <div class="col">
+                            <div class="col-lg-2 col-md-2 col-6">
                                 <div class="single_categories">
                                     <a href="#" class="bg_default small p-3">
                                         <i class="fa fa-book"></i>
@@ -128,7 +128,7 @@
                                     </a>
                                 </div>
                             </div>
-                            <div class="col">
+                            <div class="col-lg-2 col-md-2 col-6">
                                 <div class="single_categories">
                                     <a href="#" class="bg_pink small p-3">
                                         <i class="fa fa-camera"></i>
@@ -136,7 +136,7 @@
                                     </a>
                                 </div>
                             </div>
-                            <div class="col">
+                            <div class="col-lg-2 col-md-2 col-6">
                                 <div class="single_categories">
                                     <a href="#" class="bg_blue small p-3">
                                         <i class="fa fa-heartbeat"></i>
@@ -144,7 +144,7 @@
                                     </a>
                                 </div>
                             </div>
-                            <div class="col">
+                            <div class="col-lg-2 col-md-2 col-6">
                                 <div class="single_categories">
                                     <a href="#" class="bg_orange small p-3">
                                         <i class="fa fa-code"></i>
@@ -240,14 +240,14 @@
         <section class="background_bg bg_blue2 bg_fixed p-2" data-parallax-bg-image="{{asset('plantillas/eduglobal/assets/images/pattern_bg4.png')}}">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-3 col-md-3 col-6 ">
+                    <div class="col-lg-3 col-md-3 col-6">
                         <div class="box_counter counter_style1 text_white text-center animation" data-animation="fadeInUp" data-animation-delay="0.02s">
                         <div class="counter_icon">
                             <img src="{{ asset('plantillas/eduglobal/assets/images/counter_icon1.png') }}" alt="counter_icon1" />
                             </div>
                             <div class="counter_content">
                                 <h3 class="counter_text"><span class="counter">1800</span>+</h3>
-                                <p>Students</p>
+                                <p>Estudiantes</p>
                             </div>
                         </div>
                     </div>
@@ -258,7 +258,7 @@
                             </div>
                             <div class="counter_content">
                                 <h3 class="counter_text"><span class="counter">70</span></h3>
-                                <p>Courses</p>
+                                <p>Colegios</p>
                             </div>
                         </div>
                     </div>
@@ -269,7 +269,7 @@
                             </div>
                             <div class="counter_content">
                                 <h3 class="counter_text"><span class="counter">700</span>+</h3>
-                                <p>Certified teachers</p>
+                                <p>Docentes</p>
                             </div>
                         </div>
                     </div>
@@ -279,8 +279,8 @@
                             <img src="{{ asset('plantillas/eduglobal/assets/images/counter_icon4.png') }}" alt="counter_icon4" />
                             </div>
                             <div class="counter_content">
-                                <h3 class="counter_text"><span class="counter">1200</span>+</h3>
-                                <p>Award Winning</p>
+                                <h3 class="counter_text"><span class="counter">1200</span></h3>
+                                <p>Ugeles</p>
                             </div>
                         </div>
                     </div>
@@ -324,20 +324,10 @@
 
     <div class="container">
         <div class="row">
-            <div class="col-8">
+            <div class="col-md-8">
                 <h3>GALERIA DE VIDEOS</h3>
                 <div class="owl-carousel cm_banner-carousel-five">
-
-
-
-
-
                 @foreach ($VideoEmbevidos as $item)
-
-
-
-
-
                 <div class="item">
                     <div class="post_thumb">
                         <div class="post-holder">
@@ -359,7 +349,7 @@
                 @endforeach
                 </div>
             </div>
-            <div class="col-4">
+            <div class="col-md-4">
                 <div class="fb-page" data-href="https://www.facebook.com/direccionregionaldeeducacion" data-tabs="timeline" data-width="" data-height="" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/direccionregionaldeeducacion" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/direccionregionaldeeducacion">Educación DreHco</a></blockquote></div>
             </div>
         </div>
@@ -418,10 +408,10 @@
                           @endforeach
                         </div>
                         <div class="carousel-nav">
-                            <a class="carousel-control-prev" href="#carouselExampleControls2" role="button" data-slide="prev">
+                            <a class="carousel-control-prev" style="background: blue" href="#carouselExampleControls2" role="button" data-slide="prev">
                                 <i class="ion-chevron-left"></i>
                             </a>
-                            <a class="carousel-control-next" href="#carouselExampleControls2" role="button" data-slide="next">
+                            <a class="carousel-control-next" style="background: blue" href="#carouselExampleControls2" role="button" data-slide="next">
                                 <i class="ion-chevron-right"></i>
                             </a>
                         </div>

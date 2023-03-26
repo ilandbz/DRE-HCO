@@ -271,25 +271,10 @@
   <div style="background-color:#013072">
 
     <div class="container">
-        <div class="d-flex flex-nowrap overflow-hidden">
-            <div class="w-100 d-none d-md-block" style="width: 200px;">
-                <a href="http://digital.regionhuanuco.gob.pe/login" target="_blank" class="m-0 btn btn-success rounded-0" style="border:none;" tabindex="-1" role="button" aria-disabled="false"> <span style=" font-family:'oswald'">SGD DRE</span></a>
-                <a href="http://digital.regionhuanuco.gob.pe/registro/mesa-partes-virtual/57" target="_blank" class="m-0 btn btn-primary rounded-0" style="border:none;" tabindex="-1" role="button" aria-disabled="false"> <span style=" font-family:'oswald'">Mesa de partes virtual DRE</span></a>
-                <a href="https://drehuanuco.gob.pe/paginas/39" target="_blank" class="m-0 btn btn-success rounded-0" style="border:none;" tabindex="-1" role="button" aria-disabled="false"> <span style=" font-family:'oswald'">Mesa de partes virtual de UGELES</span></a>
-                <a href="https://webmail.drehuanuco.gob.pe/" target="_blank" class="m-0 btn btn-primary rounded-0" style="border:none;" tabindex="-1" role="button" aria-disabled="false"> <span style=" font-family:'oswald'">Correo Institucional</span></a>
-            </div>
-            <div class="w-auto">
-
-                <a href="http://digital.regionhuanuco.gob.pe/login" target="_blank" class="col m-0 btn btn-success rounded-0" style="border:none;" tabindex="-1" role="button" aria-disabled="false"> <span style=" font-family:'oswald'">SGD DRE</span></a>
-                <a href="http://digital.regionhuanuco.gob.pe/registro/mesa-partes-virtual/57" target="_blank" class="col m-0 btn btn-primary rounded-0" style="border:none;" tabindex="-1" role="button" aria-disabled="false"> <span style=" font-family:'oswald'">Mesa de partes virtual DRE</span></a>
-                <a href="https://drehuanuco.gob.pe/paginas/39" target="_blank" class="col m-0 btn btn-success rounded-0" style="border:none;" tabindex="-1" role="button" aria-disabled="false"> <span style=" font-family:'oswald'">Mesa de partes virtual de UGELES</span></a>
-                <a href="https://webmail.drehuanuco.gob.pe/" target="_blank" class="col m-0 btn btn-primary rounded-0" style="border:none;" tabindex="-1" role="button" aria-disabled="false"> <span style=" font-family:'oswald'">Correo Institucional</span></a>
-            </div>
-        </div>
         <div class="row align-items-center">
-            <a href="http://digital.regionhuanuco.gob.pe/login" target="_blank" class="col m-0 btn btn-success rounded-0" style="border:none;" tabindex="-1" role="button" aria-disabled="false"> <span style=" font-family:'oswald'">SGD DRE</span></a>
+            <a href="http://digital.regionhuanuco.gob.pe/login" target="_blank" class="col m-0 btn btn-danger rounded-0" style="border:none;" tabindex="-1" role="button" aria-disabled="false"> <span style=" font-family:'oswald'">SGD DRE</span></a>
             <a href="http://digital.regionhuanuco.gob.pe/registro/mesa-partes-virtual/57" target="_blank" class="col m-0 btn btn-primary rounded-0" style="border:none;" tabindex="-1" role="button" aria-disabled="false"> <span style=" font-family:'oswald'">Mesa de partes virtual DRE</span></a>
-            <a href="https://drehuanuco.gob.pe/paginas/39" target="_blank" class="col m-0 btn btn-success rounded-0" style="border:none;" tabindex="-1" role="button" aria-disabled="false"> <span style=" font-family:'oswald'">Mesa de partes virtual de UGELES</span></a>
+            <a href="https://drehuanuco.gob.pe/paginas/39" target="_blank" class="col m-0 btn btn-danger rounded-0" style="border:none;" tabindex="-1" role="button" aria-disabled="false"> <span style=" font-family:'oswald'">Mesa de partes virtual de UGELES</span></a>
             <a href="https://webmail.drehuanuco.gob.pe/" target="_blank" class="col m-0 btn btn-primary rounded-0" style="border:none;" tabindex="-1" role="button" aria-disabled="false"> <span style=" font-family:'oswald'">Correo Institucional</span></a>
         </div>
     </div>
