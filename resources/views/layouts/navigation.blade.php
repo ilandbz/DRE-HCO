@@ -108,7 +108,28 @@
                 <ul class="br-menu-sub nav flex-column">
                     <li class="sub-item"><a href="{{route('Documentogestion')}}" class="sub-link">Administrar</a></li>
                 </ul>
-            </li>                      
+            </li>
+            <li class="br-menu-item">
+                <a href="#" class="br-menu-link with-sub">
+                  <i class="menu-item-icon icon ion-ios-filing-outline tx-24"></i>
+                  <span class="menu-item-label">Infraestructura</span>
+                </a><!-- br-menu-link -->
+                <ul class="br-menu-sub">
+                    <li class="sub-item"><a href="{{route('Infraestructura')}}" class="sub-link">Administrar</a></li>
+                </ul>
+            </li>
+            <li class="br-menu-item">
+                <a href="{{route('paginawebadmin')}}" class="br-menu-link">
+                  <i class="menu-item-icon icon ion-ios-list-outline tx-22"></i>
+                  <span class="menu-item-label">Paginas Web</span>
+                </a><!-- br-menu-link -->
+            </li>
+            <li class="br-menu-item">
+                <a href="{{route('videoembevido')}}" class="br-menu-link">
+                  <i class="menu-item-icon icon ion-easel tx-22"></i>
+                  <span class="menu-item-label">Videos</span>
+                </a><!-- br-menu-link -->
+            </li>
         </ul><!-- br-sideleft-menu -->
         <br>
         </div><!-- br-sideleft -->
@@ -137,7 +158,7 @@
                             @csrf
                             <a href="{{route('logout')}}" onclick="event.preventDefault();
                             this.closest('form').submit();"><i class="icon ion-power"></i> {{ __('Cerrar Session') }}</a>
-                        </form>                    
+                        </form>
                     </li>
 
                 </ul>

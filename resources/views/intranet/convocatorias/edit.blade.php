@@ -17,6 +17,7 @@
                         <option value="DOCENTE" {{$convocatoria->tipo=='DOCENTE' ? 'selected' : ''}}>DOCENTE</option>
                         <option value="DIRECTIVO" {{$convocatoria->tipo=='DIRECTIVO' ? 'selected' : ''}}>DIRECTIVO</option>
                         <option value="REASIGNACION" {{$convocatoria->tipo=='REASIGNACION' ? 'selected' : ''}}>REASIGNACION</option>
+                        <option value="275" {{$convocatoria->tipo=='276' ? 'selected' : ''}}>276</option>
                     </select>
                     <x-input-error :messages="$errors->get('tipo')" class="mt-2" />
                 </div>

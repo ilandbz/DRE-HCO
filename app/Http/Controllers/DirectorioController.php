@@ -5,6 +5,8 @@ use App\Models\Area;
 use App\Models\Directorio;
 use Illuminate\Http\Request;
 
+use function PHPUnit\Framework\isNull;
+
 class DirectorioController extends Controller
 {
     public function index(){
@@ -57,9 +59,9 @@ class DirectorioController extends Controller
         if($request->hasFile('foto')){
             $file = $request->file('foto');
             $image_path = public_path('../../public_html/img/fotos/').$directorio->foto;
-            $filename = substr($directorio->foto, 0, -4).'.'.$file->extension();
+            $filename = time().'.'.$file->extension();
             $directorio->foto=$filename;
-            if ($directorio->foto!=null && file_exists($image_path)){
+            if ( !isNull($directorio->foto) && $directorio->foto!='' && file_exists($image_path)){
                 unlink($image_path);
             }
             $file->move(public_path('../../public_html/img/fotos'), $filename);

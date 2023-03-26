@@ -23,7 +23,7 @@ class MenuController extends Controller
         $menu = new Menu();
         $pagina = new pagina();
         if($request->link_menu!='#' && $request->link_menu==''){//SE ESTA CREANDO UNA PAGINA
-            $request->link_menu='http://127.0.0.1:8000/menus/paginaweb/'.$idpagina;
+            $request->link_menu='https://www.drehuanuco.gob.pe//menus/paginaweb/'.$idpagina;
             $pagina->id=$idpagina;
             $pagina->nom_pagina=$request->nom_pagina;
             $pagina->cont_pagina=$request->cont_pagina;

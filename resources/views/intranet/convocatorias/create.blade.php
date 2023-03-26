@@ -16,6 +16,7 @@
                         <option value="DOCENTE">DOCENTE</option>
                         <option value="DIRECTIVO">DIRECTIVO</option>
                         <option value="REASIGNACION">REASIGNACION</option>
+                        <option value="276">276</option>
                     </select>
                     <x-input-error :messages="$errors->get('tipo')" class="mt-2" />
                 </div>

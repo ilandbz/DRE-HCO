@@ -14,6 +14,7 @@ class ArchivoController extends Controller
         $archivo = new Archivo();
         $archivo->nombre=$request->nombre;
         $archivo->categoria=$request->categoria;
+        $archivo->link='';
         if($request->hasFile('file')){
             $file = $request->file('file');
             $filename = time().'.'.$file->extension();

@@ -1,5 +1,5 @@
 @extends('principal.plantilla')
-@section('title', 'UGEL - HUACAYBAMBA')
+@section('title', 'DRE - HUANUCO')
 @section('content')
         <!-- START SECTION BANNER -->
         <div class="news_ticker bg-warning">
@@ -48,15 +48,15 @@
                 </div>
             </div>
         </section>
-        <!-- END SECTION BANNER -->
-        <div class="row">
-            <div class="col-md-10">
-                <section class="pb-0 ps-2">
-                    <div class="container">
+        <section class="container-fluid py-0">
+            <div class="row py-1 mt-0">
+                <div class="col-md-1"></div>
+                <div class="col-md-8 py-1">
+                    <section class="p-1 p-2">
                         <div class="row">
                             <div class="col">
                                 <div class="single_categories">
-                                    <a href="{{route('directorioweb')}}" class="bg_danger small p-3">
+                                    <a href="{{route('directorioweb')}}" class="bg_danger small p-1">
                                         <i class="fa fa-desktop"></i>
                                         Directorio Institucional
                                     </a>
@@ -64,7 +64,7 @@
                             </div>
                             <div class="col">
                                 <div class="single_categories">
-                                    <a href="#" class="bg_light_green small p-3">
+                                    <a href="#" class="bg_light_green small p-1">
                                         <i class="fa fa-chart-line"></i>
                                         2500+ Courses
                                     </a>
@@ -72,7 +72,7 @@
                             </div>
                             <div class="col">
                                 <div class="single_categories">
-                                    <a href="{{route('documentosdegestionweb')}}" class="bg_default small p-3">
+                                    <a href="{{route('documentosdegestionweb')}}" class="bg_default small p-1">
                                         <i class="fa fa-book"></i>
                                         Gestion de Documentos
                                     </a>
@@ -80,7 +80,7 @@
                             </div>
                             <div class="col">
                                 <div class="single_categories">
-                                    <a href="{{route('galerias')}}" class="bg_pink small p-3">
+                                    <a href="{{route('galerias')}}" class="bg_pink small p-1">
                                         <i class="fa fa-camera"></i>
                                         Galeria de Imagenes
                                     </a>
@@ -88,7 +88,7 @@
                             </div>
                             <div class="col">
                                 <div class="single_categories">
-                                    <a href="#" class="bg_blue small p-3">
+                                    <a href="#" class="bg_blue small p-1">
                                         <i class="fa fa-heartbeat"></i>
                                             academics
                                     </a>
@@ -96,7 +96,7 @@
                             </div>
                             <div class="col">
                                 <div class="single_categories">
-                                    <a href="#" class="bg_orange small p-3">
+                                    <a href="#" class="bg_orange small p-1">
                                         <i class="fa fa-code"></i>
                                         Campus life
                                     </a>
@@ -114,9 +114,9 @@
                             </div>
                             <div class="col">
                                 <div class="single_categories">
-                                    <a href="#" class="bg_light_green small p-3">
+                                    <a href="{{route('infraestructuraall')}}" class="bg_light_green small p-3">
                                         <i class="fa fa-chart-line"></i>
-                                        2500+ Courses
+                                        INFRAESTRUCTURA
                                     </a>
                                 </div>
                             </div>
@@ -153,74 +153,91 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </section>
-            <!-- START SECTION NOTICIAS -->
-            <section class="pt-0">
-                <div class="container">
-                        <div class="row mb-0 mt-0">
-                            <div class="col d-flex align-items-start flex-column">
-                                <div class="mt-auto p-0"><br>
-                                    <div class="text-center animation" data-animation="fadeInUp" data-animation-delay="0.01s">
-                                    <h2>NOTICIAS</h2>
+                    </section>
+                    <section class="pt-0">
+                        <div class="container">
+                            <div class="row mb-0 mt-0">
+                                <div class="col d-flex align-items-start flex-column">
+                                    <div class="mt-auto p-0"><br>
+                                        <div class="text-center animation" data-animation="fadeInUp" data-animation-delay="0.01s">
+                                        <h2>NOTICIAS</h2>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-3 align-self-end pb-3">
+                                    <div class="text-center animation" data-animation="fadeInUp" data-animation-delay="0.07s">
+                                        <div class="medium_divider"></div>
+                                        <a href="{{route('allnoticias')}}" class="btn btn-sm btn-default rounded-0">Ver Mas Noticias <i class="ion-ios-arrow-thin-right ml-1"></i></a>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-3 align-self-end pb-3">
-                                <div class="text-center animation" data-animation="fadeInUp" data-animation-delay="0.07s">
-                                    <div class="medium_divider"></div>
-                                    <a href="{{route('allnoticias')}}" class="btn btn-sm btn-default rounded-0">Ver Mas Noticias <i class="ion-ios-arrow-thin-right ml-1"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row justify-content-center">
-
-                            <div class="col-12 animation" data-animation="fadeInUp" data-animation-delay="0.02s">
-                                <div class="testimonial_slider testimonial_style2 carousel_slider owl-carousel owl-theme" data-margin="30" data-loop="true" data-autoplay="true" data-dots="false" data-responsive='{"0":{"items": "1"}, "380":{"items": "1"}, "576":{"items": "2"}, "1199":{"items": "3"}}'>
-
-                                    @foreach ($noticias as $item)
-                                    <div class="testimonial_box mt-4">
-                                        <div class="content_box box_shadow1 animation" data-animation="fadeInUp" data-animation-delay="0.02s">
-                                            <div class="content_img">
-                                                <a href="{{route('noticia', $item->id)}}"><img src="{{asset('img/noticias/'.$item->img1)}}" alt="{{$item->titulo}}" height="190px"/></a>
-                                            </div>
-                                            <div class="content_desc">
-                                                <h4 class="content_title"><a href="{{route('noticia', $item->id)}}" title="{{$item->titulo}}">{{ Str::limit($item->titulo, 30) }}</a></h4>
-                                                <p>{{ Str::limit($item->descripcioncorta, 40) }}</p>
-                                                @php
-                                                    $date = date_create($item->fechapubli);
-                                                @endphp
-                                            </div>
-                                            <div class="content_footer">
-                                                <div class="teacher">
-                                                    <a href="{{route('noticia', $item->id)}}" class="btn btn-primary btn-sm"><span>Ver Mas</span></a>
-                                                </div>
-                                                <div class="price">
-                                                <span class="alert alert-default"> Pub : {{ date_format($date, 'd-m-Y')}}</span>
+                            <div class="row justify-content-center">
+                                <div class="col-12 animation" data-animation="fadeInUp" data-animation-delay="0.02s">
+                                    <div class="banner-area">
+                                        <div class="cm_banner cm_banner-five">
+                                            <div class="banner-inner card">
+                                                <div class="card-body gutter-left">
+                                                    <div class="owl-carousel cm_banner-carousel-five">
+                                                        @foreach ($noticias as $item)
+                                                            <div class="item">
+                                                                <div class="post_thumb" style="background-image: url({{ asset('img/noticias/'.$item->img1) }})">
+                                                                <div class="post-holder">
+                                                                    <div class="entry_cats">
+                                                                        <ul class="post-categories">
+                                                                            <li><a href="{{route('noticia', $item->id)}}" rel="category tag">Ver Mas</a></li>
+                                                                        </ul>
+                                                                    </div>
+                                                                    <!-- .entry_cats -->
+                                                                    <div class="post_title">
+                                                                        <h2><a href="{{route('noticia', $item->id)}}">{{$item->titulo}}</a></h2>
+                                                                    </div>
+                                                                    <!-- .post_title -->
+                                                                    <div class="cm-post-meta">
+                                                                        <ul class="post_meta">
+                                                                            <li class="post_author">
+                                                                            <a href="{{route('noticia', $item->id)}}">Prensa</a>
+                                                                            </li>
+                                                                            @php
+                                                                                $date = date_create($item->fechapubli);
+                                                                            @endphp
+                                                                            <!-- .post_author -->
+                                                                            <li class="posted_date">
+                                                                            <a href="{{route('noticia', $item->id)}}"><time class="entry-date published updated" datetime="2023-02-27T10:31:46-05:00">{{ date_format($date, 'd-m-Y')}}</time></a>
+                                                                            </li>
+                                                                            <!-- .posted_date -->
+                                                                        </ul>
+                                                                        <!-- .post_meta -->
+                                                                    </div>
+                                                                    <!-- .meta -->
+                                                                </div>
+                                                                <!-- .post-holder -->
+                                                                </div>
+                                                                <!-- // post_thumb -->
+                                                            </div>
+                                                        @endforeach
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    @endforeach
                                 </div>
                             </div>
                         </div>
+                    </section>
                 </div>
-                </section>
-            </div>
-            <div class="col-md-2 p-0 pt-1" style="">
-                @foreach ($mainrightitem as $item)
-                <div class="mb-2 px-4">
-                    <a href="{{$item->url}}" target="_blank" class="btn btn-primary p-0" title="{{$item->nombre}}">
-                        <img src="{{asset('img/mainright/'.$item->imagen)}}" alt="{{$item->nombre}}" class="img-fluid">
-                    </a>
+                <div class="col-md-2 p-0 pt-1">
+                    @foreach ($mainrightitem as $item)
+                    <div class="mb-2 px-4">
+                        <a href="{{$item->url}}" target="_blank" class="btn btn-primary p-0" title="{{$item->nombre}}">
+                            <img src="{{asset('img/mainright/'.$item->imagen)}}" alt="{{$item->nombre}}" class="img-fluid">
+                        </a>
+                    </div>
+                    @endforeach
                 </div>
-                @endforeach
+                <div class="col-md-1"></div>
             </div>
-        </div>
-        <!-- END SECTION NOTICIAS -->
-        <!-- START SECTION COUNTER -->
-        <section class="parallax_bg overlay_bg_blue_70 p-4" data-parallax-bg-image="{{asset('plantillas/eduglobal/assets/images/video_bg.jpg')}}">
+        </section>
+        <section class="background_bg bg_blue2 bg_fixed p-2" data-parallax-bg-image="{{asset('plantillas/eduglobal/assets/images/pattern_bg4.png')}}">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-3 col-md-3 col-6 ">
@@ -272,7 +289,7 @@
         </section>
         <!-- END SECTION COUNTER -->
         <!-- START SECTION COMUNICADOS -->
-        <section class="bg_gray">
+        <section class="bg_gray mb-0">
             <div class="container">
                 <div class="row">
                     <div class="col-12">
@@ -302,6 +319,54 @@
         </section>
         <!-- END SECTION COMUNICADOS -->
 
+
+<section class="bg_gray mt-0 pt-0">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-8">
+                <h3>GALERIA DE VIDEOS</h3>
+                <div class="owl-carousel cm_banner-carousel-five">
+
+
+
+
+
+                @foreach ($VideoEmbevidos as $item)
+
+
+
+
+
+                <div class="item">
+                    <div class="post_thumb">
+                        <div class="post-holder">
+                            <!-- .entry_cats -->
+                            <div class="post_title">
+                            </div>
+                            <!-- .post_title -->
+                            <div class="cm-post-meta p-0">
+                                <ul class="post_meta p-0">
+                                    <?php echo $item->contenido ?>
+                                </ul>
+                                <!-- .post_meta -->
+                            </div>
+                            <!-- .meta -->
+                        </div>
+                        <!-- .post-holder -->
+                    </div>
+                </div>
+                @endforeach
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="fb-page" data-href="https://www.facebook.com/direccionregionaldeeducacion" data-tabs="timeline" data-width="" data-height="" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/direccionregionaldeeducacion" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/direccionregionaldeeducacion">Educación DreHco</a></blockquote></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
     <!-- START SECTION CLIENT LOGO -->
     <section class="light_gray_bg">
     <div class="container">
@@ -326,10 +391,10 @@
                       <div class="item">
                       <a href="#"><img src="{{ asset('plantillas/eduglobal/assets/images/cl_logo2.png') }}" alt="cl_logo2"/></a>
                       </div>
-                  </div>
-              </div>
-          </div>
-      </div>
+                </div>
+            </div>
+        </div>
+    </div>
     </section>
     <!-- END SECTION CLIENT LOGO -->
     <?php if(isset($popup)){ ?>
@@ -367,3 +432,5 @@
           </div>
         <?php }  ?>
 @endsection
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_ES/sdk.js#xfbml=1&version=v16.0" nonce="9urXt4qV"></script>

@@ -16,17 +16,18 @@ use App\Models\Mainright;
 use App\Models\Documentogestion;
 use App\Models\Archivodocumentogestion;
 use App\Models\ImagenPopup;
-
+use App\Models\Infraestructura;
+use App\Models\Pagina;
+use App\Models\VideoEmbevido;
 class HomeController extends Controller
 {
     public function __invoke(){
-        //$data['galeria']=ImagenEvento::select(DB::raw('imgeventos.titulo, imgeventos.descripcion, MONTH(created_at) month, imgeventos.archivo_img'))->whereRaw('created_at BETWEEN DATE_SUB(CURDATE(), INTERVAL 2 MONTH) AND DATE_ADD(CURDATE(), INTERVAL 2 DAY) ORDER BY Id DESC')->get();
-        //$data['visitas']=$visitas;
         $data['mainrightitem']=Mainright::orderBy('indice', 'asc')->get();
         $data['comunicados']=Comunicado::orderBy('created_at', 'desc')->take(10)->get();
         $data['noticias']=Noticia::orderBy('fechapubli', 'desc')->take(6)->get();
         $data['menus']=Menu::where('activo_menu', 1)->whereNull('categoriamenu')->get();
         $data['submenus']=Menu::whereNotNull('categoriamenu')->get();
+        $data['VideoEmbevidos']=VideoEmbevido::orderBy('created_at', 'desc')->take(2)->get();
         $popup=Popup::where('estado', 1)->orderBy('created_at', 'desc')->first();
         $data['popup']=$popup;
         if(isset($popup)){
@@ -42,6 +43,7 @@ class HomeController extends Controller
         $data['menus']=$menus;
         $data['submenus']=$submenus;
         $data['noticia']=$noticia;
+        $data['mititulo']=$noticia->titulo;
         return view('paginas/noticia', $data);
     }
     public function directorio(){
@@ -51,9 +53,10 @@ class HomeController extends Controller
         $data['jefeagi']=Directorio::where('cargo', 'DIRECTOR DE GESTION INSTITUCIONAL')->first();
         $data['jefeagp']=Directorio::where('cargo', 'DIRECTORA DE GESTION PEDAGÓGICA')->first();
         $data['jefeaga']=Directorio::where('cargo', 'DIRECTOR DE GESTION ADMINISTRATIVA')->first();
+        $data['jefead2']=Directorio::where('cargo', 'DIRECTORA DE ASESORIA JURÍDICA')->first();
         $data['menus']=$menus;
         $data['submenus']=$submenus;
-        $data['registros']=Directorio::whereNotIn('cargo' , ['DIRECTOR REGIONAL DE EDUCACION', 'DIRECTOR DE GESTION INSTITUCIONAL', 'DIRECTORA DE GESTION PEDAGÓGICA', 'DIRECTOR DE GESTION ADMINISTRATIVA'])->get();
+        $data['registros']=Directorio::whereNotIn('cargo' , ['DIRECTOR REGIONAL DE EDUCACION', 'DIRECTOR DE GESTION INSTITUCIONAL', 'DIRECTORA DE GESTION PEDAGÓGICA', 'DIRECTOR DE GESTION ADMINISTRATIVA', 'DIRECTORA DE ASESORIA JURÍDICA'])->get();
         return view('paginas/directorio', $data);
     }
     public function nosotros(){
@@ -142,5 +145,18 @@ class HomeController extends Controller
         $data['registros']=$registros;
         return view('paginas/documentosdegestionweb', $data);
     }
-
+    public function infraestructura(){
+        $data['menus']=Menu::where('activo_menu', 1)->whereNull('categoriamenu')->get();
+        $data['submenus']=Menu::whereNotNull('categoriamenu')->get();
+        $data['registros']=Infraestructura::orderBy('created_at', 'desc')->take(10)->get();
+        return view('paginas/infraestructura', $data);
+    }
+    public function showpaginaweb(Pagina $pagina){
+        $menus=Menu::where('activo_menu', 1)->whereNull('categoriamenu')->get();
+        $submenus= Menu::whereNotNull('categoriamenu')->get();
+        $data['menus']=$menus;
+        $data['submenus']=$submenus;
+        $data['paginaweb']=$pagina;
+        return view('paginas/paginaweb', $data);
+    }
 }

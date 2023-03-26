@@ -21,14 +21,13 @@
         </div>
     </div>
 </section>
-<!-- END SECTION BANNER -->
 
-
-<!-- START SECTION FAQ -->
 <section>
-	<div class="container">	
+	<div class="container">
     <?php echo $paginaweb->cont_pagina ?>
     </div>
 </section>
-<!-- END SECTION FAQ -->
+
+
+
 @endsection

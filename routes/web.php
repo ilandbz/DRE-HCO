@@ -13,6 +13,9 @@ use App\Http\Controllers\ImagenEventoController;
 use App\Http\Controllers\ComunicadoController;
 use App\Http\Controllers\MainrightController;
 use App\Http\Controllers\DocumentogestionController;
+use App\Http\Controllers\InfraestructuraController;
+use App\Http\Controllers\PaginaWebController;
+use App\Http\Controllers\VideoEmbevidoController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -38,6 +41,8 @@ Route::get('/convocatoriaweb', [HomeController::class, 'convocatoriaweb'])->name
 Route::get('/verconvocatoria/{convocatoria}', [HomeController::class, 'verconvocatoria'])->name('verconvocatoria');
 Route::get('/comunicadosall', [HomeController::class, 'comunicadosall'])->name('comunicadosall');
 Route::get('/documentosdegestionweb', [HomeController::class, 'documentosdegestionweb'])->name('documentosdegestionweb');
+Route::get('/infraestructuraall', [HomeController::class, 'infraestructura'])->name('infraestructuraall');
+Route::get('/paginas/{pagina}', [HomeController::class, 'showpaginaweb'])->name('pagina.showpaginaweb');
 
 Route::controller(MenuController::class)->group(function(){
     Route::get('menus', 'index')->name('menu');
@@ -77,7 +82,6 @@ Route::controller(NoticiaController::class)->group(function(){
     Route::put('noticias/update/{noticia}', 'update')->middleware(['auth', 'verified'])->name('noticias.update');
     Route::get('noticias/show/{noticia}', 'show')->middleware(['auth', 'verified'])->name('noticias.show');
 });
-
 Route::controller(PopupController::class)->group(function(){
     Route::get('popup', 'index')->middleware(['auth', 'verified'])->name('popup');
     Route::get('popup/create', 'create')->middleware(['auth', 'verified'])->name('popup.create');
@@ -144,6 +148,25 @@ Route::controller(DocumentogestionController::class)->group(function(){
     Route::get('Documentogestion/show/{Documentogestion}', 'show')->middleware(['auth', 'verified'])->name('Documentogestion.show');
     Route::post('archivoDocumentogestion/store/{Documentogestion}', 'store2')->middleware(['auth', 'verified'])->name('archivoDocumentogestion.store');
 });
+Route::controller(InfraestructuraController::class)->group(function(){
+    Route::get('Infraestructura', 'index')->middleware(['auth', 'verified'])->name('Infraestructura');
+    Route::post('Infraestructura/store', 'store')->middleware(['auth', 'verified'])->name('infraestructura.store');
+    Route::get('Infraestructura/{infraestructura}', 'destroy')->middleware(['auth', 'verified'])->name('infraestructura.destroy');
+});
+Route::controller(PaginaWebController::class)->group(function(){
+    Route::get('PaginaWeb', 'index')->middleware(['auth', 'verified'])->name('paginawebadmin');
+    Route::post('PaginaWeb/store', 'store')->middleware(['auth', 'verified'])->name('paginaweb.store');
+    Route::put('paginas/update/{pagina}', 'update')->middleware(['auth', 'verified'])->name('paginaweb.update');
+    Route::get('paginas/destroy/{pagina}', 'destroy')->middleware(['auth', 'verified'])->name('pagina.destroy');
+    Route::get('paginas/edit/{pagina}', 'edit')->middleware(['auth', 'verified'])->name('pagina.edit');
+});
+Route::controller(VideoEmbevidoController::class)->group(function(){
+    Route::get('videoembevido', 'create')->middleware(['auth', 'verified'])->name('videoembevido');
+    Route::post('videoembevido/store', 'store')->middleware(['auth', 'verified'])->name('videoembevido.store');
+    Route::put('videoembevido/update/{videoembevido}', 'update')->middleware(['auth', 'verified'])->name('videoembevido.update');
+    Route::get('videoembevido/destroy/{videoembevido}', 'destroy')->middleware(['auth', 'verified'])->name('videoembevido.destroy');
+    Route::get('videoembevido/edit/{videoembevido}', 'edit')->middleware(['auth', 'verified'])->name('videoembevido.edit');
+});
 
 Route::get('prueba', [MenuController::class, 'prueba'])->name('prueba');
 Route::get('/intranet', function () {
@@ -154,4 +177,5 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+
 require __DIR__.'/auth.php';

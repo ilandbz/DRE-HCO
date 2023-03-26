@@ -101,6 +101,27 @@
                 </div>
               </div>
               <div class="row">
+                <div class="col"></div>
+                <div class="col-md-6">
+                    <div class="card mb-3 text-dark bg-light" style="max-width: 540px;">
+                        <div class="row g-0">
+                          <div class="col-md-4">
+                            <img src="{{asset('img/fotos/'.$jefead2->foto)}}" class="img-fluid rounded-start" alt="...">
+                          </div>
+                          <div class="col-md-8">
+                            <div class="card-body">
+                              <h5 class="card-title">{{$jefead2->cargo}}</h5>
+                              <p class="card-text">{{$jefead2->apenom}}</p>
+                              <p class="card-text"><small class="text-muted">{{$jefead2->email}}</small></p>
+                              <p class="card-text"><small class="text-muted">Cel: {{$jefead2->celular}}</small></p>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col"></div>
+              </div>
+              <div class="row">
                   <br>
                   <div class="col">
                       <table class="table table-hover">
@@ -121,14 +142,8 @@
                           <tr>
                               <td class="border border-slate-500">{{ $item->id }}</td>
                               <td class="border border-slate-500">{{ $item->apenom }}</td>
-                              <td class="border border-slate-500">
-                                  <?php
-                                  $image_path = public_path('img/fotos/').$item->foto;
-                                  if (file_exists($image_path)){  ?>
-                                  <div class="col">
-                                      <img src="{{asset('img/fotos/'.$item->foto)}}" class="img-fluid img-thumbnail" width="100" />
-                                  </div>
-                                  <?php } ?>
+                              <td class="border border-slate-500 p-1">
+                                    <img src="{{asset('img/fotos/'.$item->foto)}}" class="img-fluid thumbnail" />
                               </td>
                               <td class="border border-slate-500">{{ $item->dni }}</td>
                               <td class="border border-slate-500">{{ $item->area }}</td>
