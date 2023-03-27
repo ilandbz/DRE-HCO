@@ -27,7 +27,7 @@ class HomeController extends Controller
         $data['noticias']=Noticia::orderBy('fechapubli', 'desc')->take(6)->get();
         $data['menus']=Menu::where('activo_menu', 1)->whereNull('categoriamenu')->get();
         $data['submenus']=Menu::whereNotNull('categoriamenu')->get();
-        $data['VideoEmbevidos']=VideoEmbevido::orderBy('created_at', 'desc')->take(2)->get();
+        $data['VideoEmbevidos']=VideoEmbevido::orderBy('created_at', 'desc')->take(5)->get();
         $popup=Popup::where('estado', 1)->orderBy('created_at', 'desc')->first();
         $data['popup']=$popup;
         if(isset($popup)){
